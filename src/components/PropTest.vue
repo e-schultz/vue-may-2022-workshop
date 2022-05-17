@@ -13,11 +13,12 @@
         </ul>
         with inputs
         <ul>
+          <!--
           <li>string: <v-text-field v-model="stringProp" /></li>
           <li>obj: <v-text-field v-model="objProp.value" /></li>
           <li v-for="element in Object.keys(objProp)" :key="element">
             objProp.{{ element }} - <v-text-field v-model="objProp[element]" />
-          </li>
+          </li>-->
         </ul>
       </li>
     </ul>

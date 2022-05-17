@@ -5,7 +5,7 @@ import SimpleForm from '../views/FormGeneratorSimple.vue';
 import ExpansionPanelTest from '../views/ExpansionPanelTest.vue';
 import GridDemo from '../views/GridDemo.vue';
 import HomeView from '../views/HomeView.vue';
-// import ComponentStartOne from './workshop01/views/ComponentStartOne.vue';
+import ComponentStartOne from '../workshop01/views/ComponentStartOne.vue';
 export default [
   {
     path: '/',
@@ -43,9 +43,9 @@ export default [
     component: GridDemo,
     meta: { title: 'Grid Demo and v-row ' },
   },
-  /* {
+  {
     path: '/workshop-01',
     component: ComponentStartOne,
     meta: { title: 'Workshop Start' },
-  },*/
+  },
 ];
