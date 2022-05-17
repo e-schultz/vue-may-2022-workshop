@@ -6,6 +6,8 @@ import ExpansionPanelTest from '../views/ExpansionPanelTest.vue';
 import GridDemo from '../views/GridDemo.vue';
 import HomeView from '../views/HomeView.vue';
 import ComponentStartOne from '../workshop01/views/ComponentStartOne.vue';
+import TreeviewStart from '../workshop01/views/TreeviewStart.vue';
+import TreeviewDetailView from '../workshop01/views/TreeviewDetailView.vue';
 export default [
   {
     path: '/',
@@ -47,5 +49,17 @@ export default [
     path: '/workshop-01',
     component: ComponentStartOne,
     meta: { title: 'Workshop Start' },
+  },
+  {
+    path: '/workshop-02',
+    component: TreeviewStart,
+    meta: { title: 'Treeview Example' },
+    children: [
+      {
+        path: ':selectedItem/:selectedName',
+        component: TreeviewDetailView,
+        props: true,
+      },
+    ],
   },
 ];
