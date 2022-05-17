@@ -1,12 +1,44 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <v-app app>
+      <v-navigation-drawer v-model="drawer" permanent app>
+        <side-menu :menu-items="menuItems" />
+      </v-navigation-drawer>
+
+      <v-app-bar app>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+        <v-toolbar-title>Demos </v-toolbar-title>
+      </v-app-bar>
+      <v-main>
+        <v-container fluid>
+          <router-view />
+        </v-container>
+      </v-main>
+    </v-app>
   </div>
 </template>
+<script>
+import SideMenu from "./components/SideMenu.vue";
+export default {
+  components: {
+    SideMenu,
+  },
+  data() {
+    return {
+      drawer: false,
+      routes: this.$router.getRoutes(),
+    };
+  },
+  computed: {
+    menuItems() {
+      return this.routes.map((n) => {
+        return { title: n.meta.title, path: n.path };
+      });
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
