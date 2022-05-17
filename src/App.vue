@@ -8,7 +8,7 @@
       <v-app-bar app>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Demos </v-toolbar-title>
+        <v-toolbar-title>{{ appTitle }} </v-toolbar-title>
       </v-app-bar>
       <v-main>
         <v-container fluid>
@@ -20,6 +20,7 @@
 </template>
 <script>
 import SideMenu from "./components/SideMenu.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     SideMenu,
@@ -31,6 +32,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["appTitle"]),
     menuItems() {
       return this.routes.map((n) => {
         return { title: n.meta.title, path: n.path };

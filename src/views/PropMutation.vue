@@ -17,12 +17,11 @@
       </v-col>
       <v-col>
         <v-card>
-          <!--    <prop-test
+          <prop-test
             :stringProp="someValue"
             :objProp="objProp"
-          ></prop-test>-->
-        </v-card></v-col
-      >
+          ></prop-test> </v-card
+      ></v-col>
     </v-row>
     <div class="row mt-4">
       <div class="col-sm-1">hi</div>
@@ -35,7 +34,7 @@
 </template>
 
 <script>
-// import PropTest from "../components/PropTest.vue";
+import PropTest from "../components/PropTest.vue";
 
 export default {
   data() {
@@ -48,7 +47,7 @@ export default {
     };
   },
   components: {
-    //   PropTest,
+    PropTest,
   },
 };
 </script>

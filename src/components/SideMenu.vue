@@ -1,11 +1,9 @@
 <template>
   <v-list nav dense>
-    <v-list-item-group
-      active-class="deep-purple--text text--accent-4"
-    >
+    <v-list-item-group active-class="deep-purple--text text--accent-4">
       <v-list-item v-for="(link, index) in menuItems" :key="index">
         <v-list-item-title>
-          <router-link :to="link.path">
+          <router-link :to="link.path || '/'">
             {{ link.title }}</router-link
           ></v-list-item-title
         >
@@ -15,6 +13,6 @@
 </template>
 <script>
 export default {
-  props: ['menuItems']
-}
+  props: ["menuItems"],
+};
 </script>
