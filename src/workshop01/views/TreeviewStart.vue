@@ -18,15 +18,6 @@
         </v-row>
         <v-row>
           <v-container>
-            <!-- workshop note
-        v-treeview has a number of props, eg
-        - activatable
-        - color
-        - dense
-        - hoverable
-        - etc
-        - do we need to re-implement them all?
-        -->
             <!-- if we don't provide any content between the open
         and closing tag - the default v-treeview rendering will take over -->
             <MTreeviewAlt :items="items" />
@@ -126,14 +117,7 @@ const INITIAL_TREE = {
     },
   },
 };
-/*
-the v-treeview component expects an array of:
-[{
-  id: 0,
-  name: 'name',
-  children: []
-}]
-*/
+
 function transformTree(tree) {
   return Object.entries(tree).reduce((acc, currentItem) => {
     let [, value] = currentItem;

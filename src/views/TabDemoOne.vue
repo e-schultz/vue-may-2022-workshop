@@ -38,6 +38,7 @@ let schema = [
         { value: "radio-2", text: "Option 2" },
         { value: "radio-3", text: "Option 3" },
       ],
+      row: true,
     },
   },
   {
@@ -63,6 +64,18 @@ let schema = [
     },
     conditions: [{}],
   },
+  {
+    componentType: "radio-group",
+    binds: {
+      options: [
+        { value: "radio-5", text: "Another Option 1" },
+        { value: "radio-7", text: "Another Option 2" },
+        { value: "radio-7", text: "Another Option 3" },
+      ],
+      column: true,
+      dense: true,
+    },
+  },
 ];
 
 let childTabSchema = {
@@ -82,26 +95,26 @@ let tabSchema = {
   type: "object",
   properties: {
     one: {
-      title: "Tab 1",
-      component: SomeForm,
-    },
-    two: {
-      title: "Tab 2",
-      component: SomeTest,
-    },
-    three: {
-      title: "Tab 3",
-      component: SomeComponent,
-    },
-    four: {
-      title: "Tab 4",
+      title: "Form Generator",
       component: FormGenerator,
       binds: {
         schema: schema,
       },
     },
+    two: {
+      title: "Slides",
+      component: SomeTest,
+    },
+    three: {
+      title: "Fancy Card",
+      component: SomeComponent,
+    },
+    four: {
+      title: "Simple Form",
+      component: SomeForm,
+    },
     five: {
-      title: "Tab 5",
+      title: "Nested Tabs",
       component: TabGeneric,
       binds: {
         schema: childTabSchema,
