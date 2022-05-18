@@ -18,6 +18,7 @@
   </v-card>
 </template>
 <script>
+import transformTree from "../utils/transformTree";
 export default {
   props: ["items"],
   data() {
@@ -40,6 +41,7 @@ this a pure function that does not rely on 'this'
 - this could be exported to test the data transformation without needing
   to mount the component
 */
+/*
 function transformTree(tree) {
   return Object.entries(tree).reduce((acc, currentItem) => {
     let [key, value] = currentItem;
@@ -52,5 +54,5 @@ function transformTree(tree) {
 
     return [...acc, { key, id, name: label, children: children, ...rest }];
   }, []);
-}
+}*/
 </script>
