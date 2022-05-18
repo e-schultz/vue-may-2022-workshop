@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  props: ["options"],
+  props: ["options", "value"],
   data() {
     return {
       radioValue: "",

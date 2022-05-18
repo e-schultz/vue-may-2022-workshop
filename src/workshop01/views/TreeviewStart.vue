@@ -37,6 +37,15 @@
             </MTreeviewAlt>
           </v-container>
         </v-row>
+        <v-row>
+          <v-container>
+            <!-- What if we have a use case, where needing to display this as a tree view
+            of links is fairly common - wouldn't it be nice to just be able to pass in the list of items
+            and not need to worry about the slots? especially if we need to do this fairly often. 
+            -->
+            <MNavigationTree :items="items" :routePrefix="'/workshop-02'" />
+          </v-container>
+        </v-row>
       </v-col>
       <v-col>
         <v-row>
@@ -49,6 +58,7 @@
 <script>
 import MTreeview from "../components/MTreeview.vue";
 import MTreeviewAlt from "../components/MTreeviewAlt.vue";
+import MNavigationTree from "../components/MNavigationTree.vue";
 /* tree view expects 
 ({
       items: [
@@ -144,6 +154,7 @@ export default {
   components: {
     MTreeview,
     MTreeviewAlt,
+    MNavigationTree,
   },
 };
 </script>

@@ -37,7 +37,7 @@ const INITIAL_TREE = {
       },
       child2: {
         id: 2,
-        label: 'Child 2-2',
+        label: 'Child 1-2',
       },
     },
   },
@@ -83,7 +83,7 @@ describe('stuff', () => {
         type: 'object',
         children: [
           { children: undefined, id: 1, key: 'child1', name: 'Child 1-1' },
-          { children: undefined, id: 2, key: 'child2', name: 'Child 2-2' },
+          { children: undefined, id: 2, key: 'child2', name: 'Child 1-2' },
         ],
       },
       {
@@ -130,6 +130,17 @@ describe('stuff', () => {
       expect.arrayContaining([
         expect.objectContaining({ displayValue: 'Parent 1', key: 'item1' }),
         expect.objectContaining({ displayValue: 'Parent 3', key: 'item3' }),
+      ])
+    );
+  });
+
+  it('should use the provided itemText property on the children items', () => {
+    let actual = transformTree(initialSchema, { itemText: 'displayValue' });
+
+    expect(actual[0].children).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ displayValue: 'Child 1-1', key: 'child1' }),
+        expect.objectContaining({ displayValue: 'Child 1-2', key: 'child2' }),
       ])
     );
   });

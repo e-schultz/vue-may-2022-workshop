@@ -70,9 +70,10 @@ let schema = [
       options: [
         { value: "radio-5", text: "Another Option 1" },
         { value: "radio-7", text: "Another Option 2" },
-        { value: "radio-7", text: "Another Option 3" },
+        { value: "radio-8", text: "Another Option 3" },
       ],
       column: true,
+      multiple: false,
       dense: true,
     },
   },
