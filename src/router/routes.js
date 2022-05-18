@@ -8,6 +8,7 @@ import HomeView from '../views/HomeView.vue';
 import ComponentStartOne from '../workshop01/views/ComponentStartOne.vue';
 import TreeviewStart from '../workshop01/views/TreeviewStart.vue';
 import TreeviewDetailView from '../workshop01/views/TreeviewDetailView.vue';
+import MenusStartView from '../workshop01/views/MenusStartView.vue';
 export default [
   {
     path: '/',
@@ -53,9 +54,25 @@ export default [
   {
     path: '/workshop-02',
     component: TreeviewStart,
+    name: 'TreeViewHome',
     meta: { title: 'Treeview Example' },
     children: [
       {
+        name: 'TreeViewSelected',
+        path: ':selectedItem/:selectedName',
+        component: TreeviewDetailView,
+        props: true,
+      },
+    ],
+  },
+  {
+    path: '/workshop-03',
+    component: MenusStartView,
+    name: 'MenuStart',
+    meta: { title: 'Menus Example' },
+    children: [
+      {
+        name: 'MenuSelected',
         path: ':selectedItem/:selectedName',
         component: TreeviewDetailView,
         props: true,

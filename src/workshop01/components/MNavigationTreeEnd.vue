@@ -1,15 +1,17 @@
 <template>
   <MTreeviewAlt :items="items">
     <template v-slot:label="{ item }">
-      <router-link :to="getRoute(item)">
-        {{ item.name }}
-      </router-link>
+      <MNavigationTreeLink
+        :item="item"
+        :paramMap="paramMap"
+        :routeName="routeName"
+      />
     </template>
   </MTreeviewAlt>
 </template>
 <script>
 import MTreeviewAlt from "./MTreeviewAlt.vue";
-// import MNavigationTreeLink from "./MNavigationTreeLink.vue";
+import MNavigationTreeLink from "./MNavigationTreeLink.vue";
 export default {
   props: {
     items: Object,
@@ -27,22 +29,9 @@ export default {
       },
     },
   },
-  methods: {
-    getRoute(item) {
-      let params = this.paramMap.reduce((acc, [key, value]) => {
-        acc[key] = item[value];
-        return acc;
-      }, {});
-      let routeTo = {
-        name: this.routeName,
-        params,
-      };
 
-      return routeTo;
-    },
-  },
   components: {
-    // MNavigationTreeLink,
+    MNavigationTreeLink,
     MTreeviewAlt,
   },
 };

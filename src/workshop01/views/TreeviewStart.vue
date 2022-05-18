@@ -30,7 +30,13 @@
               know how to use the router link? -->
 
               <template v-slot:label="{ item }">
-                <router-link :to="`/workshop-02/${item.id}/${item.name}`">
+                <router-link
+                  :to="{
+                    params: { selectedItem: item.id, selectedName: item.name },
+                    name: 'TreeViewSelected',
+                  }"
+                  :append="true"
+                >
                   {{ item.name }}
                 </router-link>
               </template>
@@ -43,7 +49,7 @@
             of links is fairly common - wouldn't it be nice to just be able to pass in the list of items
             and not need to worry about the slots? especially if we need to do this fairly often. 
             -->
-            <MNavigationTree :items="items" :routePrefix="'/workshop-02'" />
+            <MNavigationTree :items="items" :routeName="'TreeViewSelected'" />
           </v-container>
         </v-row>
       </v-col>
