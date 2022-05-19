@@ -1,7 +1,5 @@
 <template>
-  <v-card>
-    <v-card-text> Yo! - {{ selectedItem }} - {{ selectedName }} </v-card-text>
-  </v-card>
+  <v-card-text> Yo! - {{ selectedItem }} - {{ selectedName }} </v-card-text>
 </template>
 <script>
 export default {

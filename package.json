@@ -51,7 +51,13 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {},
+    "rules": {
+      "no-unused-vars": "off",
+      "vue/no-unused-components": "warn",
+      "vue/no-unused-vars": "warn",
+      "vue/valid-v-for": "warn",
+      "vue/require-v-for-key": "warn"
+    },
     "overrides": [
       {
         "files": [

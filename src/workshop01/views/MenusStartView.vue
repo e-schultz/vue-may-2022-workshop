@@ -41,7 +41,19 @@
         </v-card-actions>
       </v-card>
       <v-sheet>
-        <router-view />
+        <v-card class="mx-auto" max-width="600">
+          <v-img
+            class="white--text align-end"
+            height="50px"
+            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+          >
+            <v-card-title>Selected Item</v-card-title>
+          </v-img>
+
+          <v-card-text class="text--primary">
+            <router-view />
+          </v-card-text>
+        </v-card>
       </v-sheet>
     </v-row>
   </v-container>

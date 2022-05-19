@@ -2,34 +2,6 @@
   <v-container>
     <v-row>
       <v-container>
-        <!-- workshop note
-        v-treeview has a number of props, eg
-        - activatable
-        - color
-        - dense
-        - hoverable
-        - etc
-        - do we need to re-implement them all?
-        -->
-        <MTreeview :items="treeItems" />
-      </v-container>
-    </v-row>
-    <v-row>
-      <v-container>
-        <!-- workshop note
-        v-treeview has a number of props, eg
-        - activatable
-        - color
-        - dense
-        - hoverable
-        - etc
-        - do we need to re-implement them all?
-        -->
-        <MTreeviewAlt :items="items" />
-      </v-container>
-    </v-row>
-    <v-row>
-      <v-container>
         <v-card class="mx-auto">
           <v-card-title>Card Example</v-card-title>
           <v-card-subtitle> Are you sure you want to save? </v-card-subtitle>
@@ -113,12 +85,11 @@
 </template>
 <script>
 import MCardStart from "../components/MCardStart";
-import MCard from "../components/MCard.vue";
-import MCardBody from "../components/MCardBody.vue";
-import MCardTitle from "../components/MCardTitle.vue";
-import MCardActions from "../components/MCardActions.vue";
-import MTreeview from "../components/MTreeview.vue";
-import MTreeviewAlt from "../components/MTreeviewAlt.vue";
+import MCard from "../../components/MCard.vue";
+import MCardBody from "../../components/MCardBody.vue";
+import MCardTitle from "../../components/MCardTitle.vue";
+import MCardActions from "../../components/MCardActions.vue";
+
 /* tree view expects 
 ({
       items: [
@@ -217,8 +188,6 @@ export default {
     MCardBody,
     MCardTitle,
     MCardActions,
-    MTreeview,
-    MTreeviewAlt,
   },
 };
 </script>

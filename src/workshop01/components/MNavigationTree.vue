@@ -1,16 +1,37 @@
 <template>
-  <MTreeviewAlt :items="items">
-    <template v-slot:label="{ item }">
-      <router-link :to="getRoute(item)">
-        {{ item.name }}
-      </router-link>
-    </template>
-  </MTreeviewAlt>
+  <v-container>
+    <v-toolbar color="purple" dark flat>
+      <v-toolbar-title>Navigation Tree</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <MTreeviewAlt :items="items" v-bind="$attrs" v-on="$listeners">
+      <template v-slot:label="{ item }">
+        <router-link :to="getRoute(item)">
+          {{ item.name }}
+        </router-link>
+      </template>
+    </MTreeviewAlt>
+  </v-container>
+  <!--
+  <v-container>
+    <v-toolbar color="purple" dark flat>
+      <v-toolbar-title>Navigation Tree</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <MTreeviewAlt :items="items">
+      <template v-slot:label="{ item }">
+        <router-link :to="getRoute(item)">
+          {{ item.name }}
+        </router-link>
+      </template>
+    </MTreeviewAlt>
+  </v-container>-->
 </template>
 <script>
 import MTreeviewAlt from "./MTreeviewAlt.vue";
 // import MNavigationTreeLink from "./MNavigationTreeLink.vue";
 export default {
+  inheritAttrs: false,
   props: {
     items: Object,
     routeName: {

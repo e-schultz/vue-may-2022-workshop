@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-treeview :items="treeViewItems"> </v-treeview>
+    <v-treeview :items="treeViewItems" />
   </v-card>
 </template>
 
