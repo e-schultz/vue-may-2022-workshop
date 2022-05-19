@@ -10,6 +10,30 @@
           <MTreeviewAlt :items="items" />
         </v-card>
 
+        <v-card class="mx-auto mb-3">
+          <!--  {{ treeOneActive }}
+          <v-btn @click="openAll = !openAll">Open! {{ openAll }}</v-btn>-->
+
+          <MTreeviewAlt
+            selectable
+            activatable
+            :items="items"
+            @input="onInput('onInput', $event)"
+            @update:active="onInput('onActive', $event)"
+            @update:open="onInput('onOpen', $event)"
+          />
+        </v-card>
+
+        <v-card class="mb-3">
+          <MNavigationTree
+            selectable
+            activatable
+            :items="items"
+            :routeName="'TreeViewSelected'"
+            @update:active="onInput('onActive', $event)"
+          />
+        </v-card>
+
         <v-card class="mb-3">
           <MTreeviewAlt :items="items" selectable>
             <template v-slot:label="{ item }">
