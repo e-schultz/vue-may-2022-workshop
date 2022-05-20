@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve",
+    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
   },
   "dependencies": {
     "@vue/composition-api": "^1.6.1",
@@ -20,6 +22,11 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@storybook/addon-essentials": "^6.4.3",
+    "@storybook/addon-links": "^6.4.3",
+    "@storybook/builder-webpack5": "^6.4.3",
+    "@storybook/manager-webpack5": "^6.4.3",
+    "@storybook/vue": "^6.4.3",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "^5.0.4",
@@ -34,6 +41,7 @@
     "jest": "^27.0.5",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
+    "vue-cli-plugin-storybook": "^3.0.0-rc.0",
     "vue-cli-plugin-vuetify": "~2.4.8",
     "vue-cli-plugin-windicss": "~1.1.4",
     "vue-template-compiler": "^2.6.14",
