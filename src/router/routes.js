@@ -9,6 +9,10 @@ import ComponentStartOne from '../workshop01/views/ComponentStartOneView.vue';
 import TreeviewStart from '../workshop01/views/TreeviewStartView.vue';
 import TreeviewDetailView from '../workshop01/views/TreeviewDetailView.vue';
 import MenusStartView from '../workshop01/views/MenusStartView.vue';
+import WorkshopTwoView from '../workshop02/views/WorkshopTwoView.vue';
+import WorkshopTwoHomeView from '../workshop02/views/WorkshopTwoHomeView.vue';
+import WorkshopDefault from '../workshop02/views/WorkshopDefault.vue';
+import WorkshopRight from '../workshop02/views/WorkshopRight.vue';
 export default [
   {
     path: '/',
@@ -76,6 +80,21 @@ export default [
         path: ':selectedItem/:selectedName',
         component: TreeviewDetailView,
         props: true,
+      },
+    ],
+  },
+  {
+    path: '/workshop-02-1',
+    component: WorkshopTwoView,
+    meta: { title: 'Workshop Two', order: 4 },
+    children: [
+      {
+        path: ':id',
+        name: 'WorkshopTwoView',
+        components: {
+          default: WorkshopDefault,
+          right: WorkshopRight,
+        },
       },
     ],
   },

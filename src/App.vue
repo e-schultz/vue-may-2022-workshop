@@ -40,6 +40,7 @@ export default {
         .filter((n) => n.meta?.title !== undefined)
         .sort((a, b) => (a?.meta?.order <= b?.meta?.order ? -1 : 0))
         .map((n) => {
+          console.log({ n });
           return { title: n.meta.title, path: n.path };
         });
     },
