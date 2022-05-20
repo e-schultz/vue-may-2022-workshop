@@ -11,7 +11,7 @@
         <v-toolbar-title>{{ appTitle }} </v-toolbar-title>
       </v-app-bar>
       <v-main>
-        <v-container fluid>
+        <v-container>
           <router-view />
         </v-container>
       </v-main>
@@ -20,10 +20,12 @@
 </template>
 <script>
 import SideMenu from "./components/SideMenu.vue";
+import X from "./components/SomeTest.vue";
 import { mapGetters } from "vuex";
 export default {
   components: {
     SideMenu,
+    X,
   },
   data() {
     return {
@@ -34,9 +36,12 @@ export default {
   computed: {
     ...mapGetters(["appTitle"]),
     menuItems() {
-      return this.routes.map((n) => {
-        return { title: n.meta.title, path: n.path };
-      });
+      return this.routes
+        .filter((n) => n.meta?.title !== undefined)
+        .sort((a, b) => (a?.meta?.order <= b?.meta?.order ? -1 : 0))
+        .map((n) => {
+          return { title: n.meta.title, path: n.path };
+        });
     },
   },
 };

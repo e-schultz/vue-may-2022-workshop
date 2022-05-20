@@ -1,7 +1,7 @@
 {
   "include": [
     "./src/**/*"
-  ],
+, "tests/unit/transformTree.spec.js"  ],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",

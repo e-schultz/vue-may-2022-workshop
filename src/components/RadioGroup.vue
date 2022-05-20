@@ -1,5 +1,6 @@
 <template>
-  <v-radio-group v-model="radioValue" row>
+  <!-- <v-radio-group v-model="radioValue" v-bind="$attrs"> -->
+  <v-radio-group v-model="radioValue" v-bind="$attrs">
     <template v-for="option in options">
       <v-radio
         :label="option.text"
@@ -11,11 +12,11 @@
 </template>
 <script>
 export default {
-  props: ['options'],
+  props: ["options", "value"],
   data() {
     return {
-      radioValue: ''
-    }
-  }
-}
+      radioValue: "",
+    };
+  },
+};
 </script>
